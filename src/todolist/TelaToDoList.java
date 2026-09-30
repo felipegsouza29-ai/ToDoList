@@ -61,6 +61,8 @@ public class TelaToDoList extends javax.swing.JFrame {
         jButton1AdicionarTarefa.addActionListener(this::jButton1AdicionarTarefaActionPerformed);
 
         jComboBoxFiltroStatus.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Todos", "Concluído", "Não concluído" }));
+        jComboBoxFiltroStatus.addItemListener(this::jComboBoxFiltroStatusItemStateChanged);
+        jComboBoxFiltroStatus.addActionListener(this::jComboBoxFiltroStatusActionPerformed);
 
         jTableTarefas.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -154,11 +156,11 @@ public class TelaToDoList extends javax.swing.JFrame {
         
         String tarefaSelecionada = recuperarTarefa(linhaSelecionada);
         
-        int indiceTarefaSelecinada = tarefas.indexOf(tarefaSelecionada);
+        int indiceTarefaSelecionada = tarefas.indexOf(tarefaSelecionada);
         
-        String[] dados = tarefas.get(indiceTarefaSelecinada).split(";");
+        String[] dados = tarefas.get(indiceTarefaSelecionada).split(";");
         
-        tarefas.set(indiceTarefaSelecinada, dados[0] + ";" + CONCLUIDA);
+        tarefas.set(indiceTarefaSelecionada, dados[0] + ";" + CONCLUIDA);
         
         filtrarTabela();
         
@@ -206,6 +208,16 @@ public class TelaToDoList extends javax.swing.JFrame {
     
     preencherTabela();
     }//GEN-LAST:event_jButtonRemoverTarefaActionPerformed
+
+    private void jComboBoxFiltroStatusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxFiltroStatusActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBoxFiltroStatusActionPerformed
+
+    private void jComboBoxFiltroStatusItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jComboBoxFiltroStatusItemStateChanged
+       filtrarTabela();
+       
+       preencherTabela();
+    }//GEN-LAST:event_jComboBoxFiltroStatusItemStateChanged
 
     private void filtrarTabela(){
         int opcao = jComboBoxFiltroStatus.getSelectedIndex();

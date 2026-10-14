@@ -1,3 +1,4 @@
-ler um livro;Não concluída;08/10/2026 10:10
-fazer skin care;Não concluída;08/10/2026 10:10
-fazer almoço;Não concluída;08/10/2026 10:29
+a;Não concluída;14/10/2026 10:35;
+b;Não concluída;14/10/2026 10:35;
+c;Não concluída;14/10/2026 10:35;
+rset;Concluída;14/10/2026 11:24;14/10/2026 11:25
